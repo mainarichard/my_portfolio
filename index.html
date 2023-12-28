@@ -36,11 +36,11 @@
                 <h1 class="sub-title">About Me</h1>
                 <p> Hi, I'm a Python programming enthusiast with skills in python frontend and backend technologies and AI API's integration</p>
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>Web Development</span><br>Developing Websites</li>
                         <li><span>App Development</span><br>Web App Development</li>
@@ -48,9 +48,41 @@
 
                     </ul>
                 </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>September 2023 - Current</span><br>Freelance Python Developer</li>
+                        <li><span>June-August 2023</span><br> Machine learning engineer Intern at Ramana Tech School</li>
+                        <li><span>May-August 2022</span><br>Network Automation Intern at Total Solutions Limited</li>
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>September 2023 - Current</span><br>BSc IT at Multimedia University of Kenya</li>
+                       
+                    </ul>
+                    
+                </div>
             </div>
         </div>
     </div>
  </div>
+ <script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname) {
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+ </script>
 </body>
 </html>
